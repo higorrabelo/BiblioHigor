@@ -15,10 +15,10 @@ public class QuadrinhoService {
                     "insert into quadrinhos(nome_quadrinho, nome_editora, numero, mes, ano) "
                     +"values "
                     +"(?,?,?,?,?)");
-            st.setString(1,qd.getNome_quadrinho());
-            st.setString(2,qd.getNome_editora());
+            st.setString(1,qd.getNome_quadrinho().toUpperCase());
+            st.setString(2,qd.getNome_editora().toUpperCase());
             st.setInt(3, qd.getNumero());
-            st.setString(4,qd.getMes());
+            st.setString(4,qd.getMes().toUpperCase());
             st.setInt(5, qd.getAno());  
             int rows = st.executeUpdate();
             
