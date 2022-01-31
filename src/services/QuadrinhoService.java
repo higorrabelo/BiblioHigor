@@ -31,4 +31,15 @@ public class QuadrinhoService {
         
     }
     
+    public ResultSet getList(){
+       try{
+            conn = DB.getConnection();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("select * from quadrinhos");
+            return rs;
+       }
+       catch(SQLException e){
+           throw new DbException("Não foi possível restaurar a Lista de HQS");
+       }
+    }
 }
