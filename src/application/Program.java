@@ -3,23 +3,19 @@ package application;
 import java.sql.Connection;
 import db.*;
 import services.QuadrinhoService;
-import java.sql.*;
+//import java.sql.*;
+import model.Quadrinho;
 public class Program {
     
     public static void main(String[] args){
-    try{
+  
         Connection conn = DB.getConnection();
         
         QuadrinhoService qs = new QuadrinhoService();
-        ResultSet rs = qs.getList();
         
-        while(rs.next()){
-            System.out.println(rs.getString("nome_quadrinho"));
+        for (Quadrinho hq : qs.getList()){
+             System.out.println(hq);
         }
-      }
-    catch(SQLException e){
-        throw new DbException("Erro na aplicação");
-    }
     }
     
 }

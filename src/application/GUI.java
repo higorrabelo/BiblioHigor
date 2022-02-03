@@ -19,19 +19,7 @@ public class GUI extends javax.swing.JFrame {
      * Creates new form GUI
      */
     public GUI() {
-        initComponents();
-        try{
-                QuadrinhoService qs = new QuadrinhoService();
-                ResultSet rs = qs.getList();
-                while(rs.next()){
-                    hqTable.setValueAt(rs.getString("nome_quadrinho"),0,1);
-                }       
-        }
-        catch(SQLException e){
-            throw new DbException("Erro ao carregar dados na tabela");
-        }
-       
-        
+        initComponents();    
     }
 
     
