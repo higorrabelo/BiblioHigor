@@ -1,21 +1,18 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package application;
-import java.sql.Connection;
-import db.*;
-import services.QuadrinhoService;
-//import java.sql.*;
-import model.Quadrinho;
+
+/**
+ *
+ * @author higor_x
+ */
 public class Program {
     
     public static void main(String[] args){
-  
-        Connection conn = DB.getConnection();
-        
-        QuadrinhoService qs = new QuadrinhoService();
-        
-        for (Quadrinho hq : qs.getList()){
-             System.out.println(hq);
-        }
+    
     }
     
 }

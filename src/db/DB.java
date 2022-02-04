@@ -1,10 +1,7 @@
 package db;
-import java.io.IOException;
-import java.sql.Connection;
-import java.util.Properties;
-import java.io.FileInputStream;
-import java.sql.DriverManager;
 import java.sql.*;
+import java.util.*;
+import java.io.*;
 public class DB {
     
     private static Connection conn = null;
@@ -17,54 +14,52 @@ public class DB {
                 conn = DriverManager.getConnection(url,props);
             }
             catch(SQLException e){
-                throw new DbException("Erro ao conectar ao banco de dados");
+                throw new DbException("Erro na conexão com o banco de dados");
             }
-        } 
+        }
         return conn;
     }
     
-    public static void closeConneciton(){
+    public static void closeConnection(){
         if(conn != null){
             try{
                 conn.close();
             }
             catch(SQLException e){
-                throw new DbException("Erro ao FEchar o Banco de dados");
+                throw new DbException("Erro ao Fechar a Conexão");
             }
         }
     }
+    
     private static Properties loadProperties(){
-  
         try(FileInputStream fs = new FileInputStream("banco.properties")){
             Properties props = new Properties();
             props.load(fs);
             return props;
         }
-       catch(IOException e){
-          throw new DbException("Erro ao conectar ao arquivo de propriedades");
-       }
-        
+        catch(IOException e){
+            throw new DbException("Erro em carregar o arquivo de propriedades");
+        }
     }
+    
     public static void closeStatement(Statement st){
         if(st != null){
             try{
                 st.close();
             }
             catch(SQLException e){
-                throw new DbException("Statement Não pode ser Fechado");
+                throw new DbException("Erro ao fechar o Statement");
             }
         }
     }
-    public static void closeResultSet(ResultSet rs){
+      public static void closeResultSet(ResultSet rs){
         if(rs != null){
-        try{
-            rs.close();
-        }
-        catch(SQLException e){
-            throw new DbException("Erro ao Fechar o ResultSet");
-        }
+            try{
+                rs.close();
+            }
+            catch(SQLException e){
+                throw new DbException("Erro ao fechar o ResultSet");
+            }
         }
     }
-   
-    
 }
