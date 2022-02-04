@@ -22,10 +22,16 @@ public class Program {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         UsuarioDAO userDao = DaoFactory.criarUsuario();
         
+        Usuario user = userDao.acharPorId(6);
+        
+        user.setNome_usuario("Mamae :) ");
+        
+        userDao.update(user);
+        
         //Usuario user = new Usuario("Edmilson","Edmilson","edmilson@gmail.com",sdf.parse("24/09/1954"),new Date(),"Avenida Duque de Caxias");
         //userDao.insere(user);
         
-        userDao.delete(3);
+        //userDao.delete(3);
        /*
         
          for(Usuario user : userDao.listarUsuario()){

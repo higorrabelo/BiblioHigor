@@ -45,8 +45,7 @@ public class UsuarioService implements UsuarioDAO{
 
     @Override
     public void update(Usuario obj) {
-        String sql = "update usuario set nome_usuario = ?, senha_usuario = md5(?) , email_usuario = ? ,"
-                    + " nascimento = ? , cadastro = ? , endereco = ?  where id_usuario = ? ";
+        String sql = "update usuario set nome_usuario = ?, senha_usuario = md5(?) , email_usuario = ?, nascimento = ? , cadastro = ? , endereco = ?  where id_usuario = ? ";
         PreparedStatement st = null;
         try{
             st = conn.prepareStatement(sql);
@@ -56,6 +55,7 @@ public class UsuarioService implements UsuarioDAO{
             st.setDate(4, new java.sql.Date(obj.getNascimento().getTime()));
             st.setDate(5, new java.sql.Date(obj.getCadastro().getTime()));
             st.setString(6, obj.getEndereco());
+            st.setInt(7, obj.getId_usuario());
             
             int rows = st.executeUpdate();
             
