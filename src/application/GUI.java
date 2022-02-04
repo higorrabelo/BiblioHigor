@@ -5,6 +5,14 @@
  */
 package application;
 
+import dao.DaoFactory;
+import dao.UsuarioDAO;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import model.Usuario;
+
 /**
  *
  * @author higor_x
@@ -16,6 +24,15 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
+    }
+    
+    public void limparCampos(){
+        txtNome.setText("");
+        txtSenha.setText("");
+        txtEmail.setText("");
+        txtNascimento.setText("");
+        txtCadastro.setText("");
+        txtEndereco.setText("");
     }
 
     /**
@@ -59,6 +76,11 @@ public class GUI extends javax.swing.JFrame {
         jLabel6.setText("Endereço");
 
         btCadastro.setText("Cadastrar");
+        btCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadastroActionPerformed(evt);
+            }
+        });
 
         btAtualiza.setText("Atualizar");
 
@@ -135,6 +157,28 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastroActionPerformed
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            try{
+                UsuarioDAO userDao = DaoFactory.criarUsuario();
+                String name = txtNome.getText();
+                String senha = txtSenha.getPassword().toString();
+                String email = txtEmail.getText();
+                Date nascimento = sdf.parse(txtNascimento.getText());
+                Date cadastro = sdf.parse(txtCadastro.getText());
+                String endereco =   txtEndereco.getText();
+                Usuario user = new Usuario(name,senha,email,nascimento,cadastro,endereco);
+                userDao.insere(user);
+                
+                limparCampos();
+                
+            }
+            catch(ParseException e){
+                JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
+            }
+            
+    }//GEN-LAST:event_btCadastroActionPerformed
 
     /**
      * @param args the command line arguments
