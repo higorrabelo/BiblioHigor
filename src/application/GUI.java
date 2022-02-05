@@ -26,8 +26,7 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
-        cadastroUsuario.setVisible(false);
-        cadastroHq.setVisible(false);
+        
        
     }
     
@@ -58,6 +57,23 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        abasPane = new javax.swing.JTabbedPane();
+        cadastroHq = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtQuadrinho = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtEditora = new javax.swing.JTextField();
+        comboBox = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtAno = new javax.swing.JTextField();
+        txtNumero = new javax.swing.JTextField();
+        btHqCad = new javax.swing.JButton();
+        btHqUpdate = new javax.swing.JButton();
+        btHqDelete = new javax.swing.JButton();
+        btHqProcurar = new javax.swing.JButton();
         cadastroUsuario = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         btProcura = new javax.swing.JButton();
@@ -76,22 +92,6 @@ public class GUI extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         btApaga = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        cadastroHq = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtQuadrinho = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtEditora = new javax.swing.JTextField();
-        comboBox = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtAno = new javax.swing.JTextField();
-        txtNumero = new javax.swing.JTextField();
-        btHqCad = new javax.swing.JButton();
-        btHqUpdate = new javax.swing.JButton();
-        btHqDelete = new javax.swing.JButton();
-        btHqProcurar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -105,92 +105,29 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
-        cadastroUsuario.setBackground(new java.awt.Color(204, 204, 204));
-        cadastroUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel15.setText("Endereço");
-        cadastroUsuario.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 294, -1, -1));
-
-        btProcura.setText("Procurar");
-        btProcura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btProcuraActionPerformed(evt);
-            }
-        });
-        cadastroUsuario.add(btProcura, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 420, -1, -1));
-        cadastroUsuario.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 92, 188, -1));
-        cadastroUsuario.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 180, 188, -1));
-        cadastroUsuario.add(txtNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 223, 188, -1));
-        cadastroUsuario.add(txtCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 268, 188, -1));
-
-        jLabel16.setText("Nome Usuario");
-        cadastroUsuario.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 75, -1, -1));
-        cadastroUsuario.add(txtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 314, 188, -1));
-
-        jLabel17.setText("Senha Usuário");
-        cadastroUsuario.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 118, -1, -1));
-        cadastroUsuario.add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 136, 188, -1));
-
-        jLabel18.setText("E-mail");
-        cadastroUsuario.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 162, -1, -1));
-
-        btCadastro.setText("Cadastrar");
-        btCadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCadastroActionPerformed(evt);
-            }
-        });
-        cadastroUsuario.add(btCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 379, -1, -1));
-
-        jLabel19.setText("Data Nascimento");
-        cadastroUsuario.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 206, -1, -1));
-
-        btAtualiza.setText("Atualizar");
-        btAtualiza.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtualizaActionPerformed(evt);
-            }
-        });
-        cadastroUsuario.add(btAtualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 379, -1, -1));
-
-        jLabel20.setText("Data de Cadastro");
-        cadastroUsuario.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 249, -1, -1));
-
-        btApaga.setText("Apagar");
-        btApaga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btApagaActionPerformed(evt);
-            }
-        });
-        cadastroUsuario.add(btApaga, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 420, 81, -1));
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel21.setText("Cadastrar Usuário");
-        cadastroUsuario.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 11, -1, -1));
-
         cadastroHq.setBackground(new java.awt.Color(204, 204, 204));
         cadastroHq.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Cadastrar Quadrinhos");
-        cadastroHq.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
+        cadastroHq.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
         jLabel2.setText("Nome do Quadrinho");
-        cadastroHq.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        cadastroHq.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, -1));
 
         txtQuadrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtQuadrinhoActionPerformed(evt);
             }
         });
-        cadastroHq.add(txtQuadrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 250, -1));
+        cadastroHq.add(txtQuadrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 250, -1));
 
         jLabel3.setText("Editora");
-        cadastroHq.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        cadastroHq.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
 
         jLabel4.setText("Numero");
-        cadastroHq.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
-        cadastroHq.add(txtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 250, -1));
+        cadastroHq.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
+        cadastroHq.add(txtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 250, -1));
 
         comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL", "MAIO", "JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO" }));
         comboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -198,15 +135,15 @@ public class GUI extends javax.swing.JFrame {
                 comboBoxActionPerformed(evt);
             }
         });
-        cadastroHq.add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 90, 20));
+        cadastroHq.add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 90, 20));
 
         jLabel5.setText("Mês");
-        cadastroHq.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 10));
+        cadastroHq.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, -1, 10));
 
         jLabel6.setText("Ano");
-        cadastroHq.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
-        cadastroHq.add(txtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 50, -1));
-        cadastroHq.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 50, -1));
+        cadastroHq.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, -1, -1));
+        cadastroHq.add(txtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 50, -1));
+        cadastroHq.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 50, -1));
 
         btHqCad.setText("Cadastrar");
         btHqCad.addActionListener(new java.awt.event.ActionListener() {
@@ -214,10 +151,15 @@ public class GUI extends javax.swing.JFrame {
                 btHqCadActionPerformed(evt);
             }
         });
-        cadastroHq.add(btHqCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+        cadastroHq.add(btHqCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
 
         btHqUpdate.setText("Atualizar");
-        cadastroHq.add(btHqUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 80, -1));
+        btHqUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHqUpdateActionPerformed(evt);
+            }
+        });
+        cadastroHq.add(btHqUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 80, -1));
 
         btHqDelete.setText("Apagar");
         btHqDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -225,10 +167,85 @@ public class GUI extends javax.swing.JFrame {
                 btHqDeleteActionPerformed(evt);
             }
         });
-        cadastroHq.add(btHqDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, -1));
+        cadastroHq.add(btHqDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 80, -1));
 
         btHqProcurar.setText("Procurar");
-        cadastroHq.add(btHqProcurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 80, -1));
+        btHqProcurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHqProcurarActionPerformed(evt);
+            }
+        });
+        cadastroHq.add(btHqProcurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 80, -1));
+
+        abasPane.addTab("Cadastrar Quadrinhos", cadastroHq);
+        cadastroHq.getAccessibleContext().setAccessibleName("cadHq");
+
+        cadastroUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        cadastroUsuario.setName(""); // NOI18N
+        cadastroUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setText("Endereço");
+        cadastroUsuario.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, -1, -1));
+
+        btProcura.setText("Procurar");
+        btProcura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btProcuraActionPerformed(evt);
+            }
+        });
+        cadastroUsuario.add(btProcura, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, -1, -1));
+        cadastroUsuario.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 188, -1));
+        cadastroUsuario.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 188, -1));
+        cadastroUsuario.add(txtNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 188, -1));
+        cadastroUsuario.add(txtCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 188, -1));
+
+        jLabel16.setText("Nome Usuario");
+        cadastroUsuario.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
+        cadastroUsuario.add(txtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 188, -1));
+
+        jLabel17.setText("Senha Usuário");
+        cadastroUsuario.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
+        cadastroUsuario.add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 188, -1));
+
+        jLabel18.setText("E-mail");
+        cadastroUsuario.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, -1, -1));
+
+        btCadastro.setText("Cadastrar");
+        btCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadastroActionPerformed(evt);
+            }
+        });
+        cadastroUsuario.add(btCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
+
+        jLabel19.setText("Data Nascimento");
+        cadastroUsuario.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+
+        btAtualiza.setText("Atualizar");
+        btAtualiza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizaActionPerformed(evt);
+            }
+        });
+        cadastroUsuario.add(btAtualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, -1));
+
+        jLabel20.setText("Data de Cadastro");
+        cadastroUsuario.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+
+        btApaga.setText("Apagar");
+        btApaga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btApagaActionPerformed(evt);
+            }
+        });
+        cadastroUsuario.add(btApaga, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 81, -1));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel21.setText("Cadastrar Usuário");
+        cadastroUsuario.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, -1, -1));
+
+        abasPane.addTab("Cadastrar usuários", cadastroUsuario);
+        cadastroUsuario.getAccessibleContext().setAccessibleName("cadUser");
 
         jMenu1.setText("File");
 
@@ -275,17 +292,16 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
-                .addComponent(cadastroHq, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addComponent(abasPane, javax.swing.GroupLayout.PREFERRED_SIZE, 886, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cadastroHq, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 66, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addComponent(abasPane, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -296,13 +312,11 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        cadastroUsuario.setVisible(true);   
-        cadastroHq.setVisible(false);// TODO add your handling code here:
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        cadastroUsuario.setVisible(false); 
-        cadastroHq.setVisible(true);// TODO add your handling code here:
+        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void btApagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagaActionPerformed
@@ -387,33 +401,76 @@ public class GUI extends javax.swing.JFrame {
         txtEndereco.setText(user.getEndereco());
     }//GEN-LAST:event_btProcuraActionPerformed
 
-    private void txtQuadrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuadrinhoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtQuadrinhoActionPerformed
+    private void btHqProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqProcurarActionPerformed
+        String recebe = JOptionPane.showInputDialog("Digite o Id do Quadrinho");
 
-    private void comboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxActionPerformed
-              // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxActionPerformed
+        QuadrinhosDAO hqDao = DaoFactory.criarQuadrinho();
+        Quadrinhos hq = hqDao.acharPorId(Integer.parseInt(recebe));// TODO add your handling code here:
+
+        novoId=hq.getId_quadrinho();
+
+        txtQuadrinho.setText(hq.getNome_quadrinho());
+        txtEditora.setText(hq.getNome_editora());
+        txtNumero.setText(String.valueOf(hq.getNumero()));
+        comboBox.setName(hq.getMes());
+        txtAno.setText(String.valueOf(hq.getAno()));
+    }//GEN-LAST:event_btHqProcurarActionPerformed
+
+    private void btHqDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqDeleteActionPerformed
+
+        QuadrinhosDAO hqDao = DaoFactory.criarQuadrinho();
+        Quadrinhos hq = hqDao.acharPorId(novoId);
+        novoId=hq.getId_quadrinho();
+        txtQuadrinho.setText(hq.getNome_quadrinho());
+        txtEditora.setText(hq.getNome_editora());
+        txtNumero.setText(String.valueOf(hq.getNumero()));
+        comboBox.setName(hq.getMes());
+        txtAno.setText(String.valueOf(hq.getAno()));
+
+        hqDao.delete(hq.getId_quadrinho());
+        limparCampos();        // TODO add your handling code here:
+    }//GEN-LAST:event_btHqDeleteActionPerformed
+
+    private void btHqUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqUpdateActionPerformed
+        QuadrinhosDAO hqDao = DaoFactory.criarQuadrinho();
+        Quadrinhos hq = hqDao.acharPorId(novoId);
+
+        hq.setNome_quadrinho(txtQuadrinho.getText());
+        hq.setNome_editora(txtEditora.getText());
+        hq.setNumero(Integer.parseInt(txtNumero.getText()));
+        hq.setMes(comboBox.getSelectedItem().toString());
+        hq.setAno(Integer.parseInt(txtAno.getText()));
+
+        hqDao.update(hq);
+
+        limparCampos();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btHqUpdateActionPerformed
 
     private void btHqCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqCadActionPerformed
-        
+
         QuadrinhosDAO hqDao = DaoFactory.criarQuadrinho();
         String nome = txtQuadrinho.getText().toUpperCase();
         String editora = txtEditora.getText().toUpperCase();
         int numero = Integer.parseInt(txtNumero.getText());
         String mes = comboBox.getSelectedItem().toString();
         int ano = Integer.parseInt(txtAno.getText());
-        
+
         Quadrinhos hq = new Quadrinhos(nome,editora,numero,mes,ano);
-        
+
         hqDao.insere(hq);
-        
-            // TODO add your handling code here:
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_btHqCadActionPerformed
 
-    private void btHqDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqDeleteActionPerformed
-limparCampos();        // TODO add your handling code here:
-    }//GEN-LAST:event_btHqDeleteActionPerformed
+    private void comboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxActionPerformed
+
+    private void txtQuadrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuadrinhoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuadrinhoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -451,6 +508,7 @@ limparCampos();        // TODO add your handling code here:
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane abasPane;
     private javax.swing.JButton btApaga;
     private javax.swing.JButton btAtualiza;
     private javax.swing.JButton btCadastro;

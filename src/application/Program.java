@@ -12,6 +12,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import model.Usuario;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 import model.Quadrinhos;
 
 /**
@@ -25,6 +28,12 @@ public class Program {
        
         QuadrinhosDAO hqDao = DaoFactory.criarQuadrinho();
        
+        List<Quadrinhos> hqs = hqDao.listarQuadrinhos();
+        
+        
+        
+ 
+        
         for(Quadrinhos hq : hqDao.listarQuadrinhos()){
             System.out.println(hq);
         }
