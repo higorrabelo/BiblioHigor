@@ -24,7 +24,7 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
-        CadastroUsuario.setVisible(false);
+        cadastroUsuario.setVisible(false);
        
     }
     
@@ -50,21 +50,21 @@ public class GUI extends javax.swing.JFrame {
 
         cadastroUsuario = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        btProcura2 = new javax.swing.JButton();
-        txtNome2 = new javax.swing.JTextField();
-        txtEmail2 = new javax.swing.JTextField();
-        txtNascimento2 = new javax.swing.JTextField();
-        txtCadastro2 = new javax.swing.JTextField();
+        btProcura = new javax.swing.JButton();
+        txtNome = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        txtNascimento = new javax.swing.JTextField();
+        txtCadastro = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        txtEndereco2 = new javax.swing.JTextField();
+        txtEndereco = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        txtSenha2 = new javax.swing.JPasswordField();
+        txtSenha = new javax.swing.JPasswordField();
         jLabel18 = new javax.swing.JLabel();
-        btCadastro2 = new javax.swing.JButton();
+        btCadastro = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
-        btAtualiza2 = new javax.swing.JButton();
+        btAtualiza = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        btApaga2 = new javax.swing.JButton();
+        btApaga = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -80,8 +80,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel15.setText("Endereço");
 
-        btProcura2.setText("Procurar");
-        btProcura2.addActionListener(new java.awt.event.ActionListener() {
+        btProcura.setText("Procurar");
+        btProcura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btProcuraActionPerformed(evt);
             }
@@ -93,8 +93,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel18.setText("E-mail");
 
-        btCadastro2.setText("Cadastrar");
-        btCadastro2.addActionListener(new java.awt.event.ActionListener() {
+        btCadastro.setText("Cadastrar");
+        btCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCadastroActionPerformed(evt);
             }
@@ -102,8 +102,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel19.setText("Data Nascimento");
 
-        btAtualiza2.setText("Atualizar");
-        btAtualiza2.addActionListener(new java.awt.event.ActionListener() {
+        btAtualiza.setText("Atualizar");
+        btAtualiza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAtualizaActionPerformed(evt);
             }
@@ -111,8 +111,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel20.setText("Data de Cadastro");
 
-        btApaga2.setText("Apagar");
-        btApaga2.addActionListener(new java.awt.event.ActionListener() {
+        btApaga.setText("Apagar");
+        btApaga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btApagaActionPerformed(evt);
             }
@@ -130,68 +130,68 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(cadastroUsuarioLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEndereco2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCadastro2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNascimento2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18)
                             .addComponent(jLabel19)
                             .addComponent(jLabel20)
                             .addComponent(jLabel15)
                             .addGroup(cadastroUsuarioLayout.createSequentialGroup()
                                 .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btCadastro2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btApaga2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btApaga, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btProcura2)
-                                    .addComponent(btAtualiza2)))
-                            .addComponent(txtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btProcura)
+                                    .addComponent(btAtualiza)))
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16)
                             .addComponent(jLabel17)))
                     .addGroup(cadastroUsuarioLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
+                        .addGap(112, 112, 112)
                         .addComponent(jLabel21)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         cadastroUsuarioLayout.setVerticalGroup(
             cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastroUsuarioLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addComponent(jLabel16)
                 .addGap(3, 3, 3)
-                .addComponent(txtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
                 .addGap(4, 4, 4)
-                .addComponent(txtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18)
                 .addGap(4, 4, 4)
-                .addComponent(txtEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel19)
                 .addGap(3, 3, 3)
-                .addComponent(txtNascimento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel20)
                 .addGap(5, 5, 5)
-                .addComponent(txtCadastro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEndereco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCadastro2)
-                    .addComponent(btAtualiza2))
+                    .addComponent(btCadastro)
+                    .addComponent(btAtualiza))
                 .addGap(18, 18, 18)
                 .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btApaga2)
-                    .addComponent(btProcura2))
+                    .addComponent(btApaga)
+                    .addComponent(btProcura))
                 .addGap(27, 27, 27))
         );
 
@@ -240,13 +240,16 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(355, 355, 355)
+                .addGap(196, 196, 196)
                 .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(478, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cadastroUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -257,11 +260,11 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-                       // TODO add your handling code here:
+        cadastroUsuario.setVisible(true);                       // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        CadastroUsuario.setVisible(false);        // TODO add your handling code here:
+        cadastroUsuario.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void btApagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagaActionPerformed
@@ -382,42 +385,18 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CadastroUsuario;
-    private javax.swing.JPanel CadastroUsuario1;
     private javax.swing.JButton btApaga;
-    private javax.swing.JButton btApaga1;
-    private javax.swing.JButton btApaga2;
     private javax.swing.JButton btAtualiza;
-    private javax.swing.JButton btAtualiza1;
-    private javax.swing.JButton btAtualiza2;
     private javax.swing.JButton btCadastro;
-    private javax.swing.JButton btCadastro1;
-    private javax.swing.JButton btCadastro2;
     private javax.swing.JButton btProcura;
-    private javax.swing.JButton btProcura1;
-    private javax.swing.JButton btProcura2;
     private javax.swing.JPanel cadastroUsuario;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -428,22 +407,10 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTextField txtCadastro;
-    private javax.swing.JTextField txtCadastro1;
-    private javax.swing.JTextField txtCadastro2;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtEmail1;
-    private javax.swing.JTextField txtEmail2;
     private javax.swing.JTextField txtEndereco;
-    private javax.swing.JTextField txtEndereco1;
-    private javax.swing.JTextField txtEndereco2;
     private javax.swing.JTextField txtNascimento;
-    private javax.swing.JTextField txtNascimento1;
-    private javax.swing.JTextField txtNascimento2;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNome1;
-    private javax.swing.JTextField txtNome2;
     private javax.swing.JPasswordField txtSenha;
-    private javax.swing.JPasswordField txtSenha1;
-    private javax.swing.JPasswordField txtSenha2;
     // End of variables declaration//GEN-END:variables
 }
