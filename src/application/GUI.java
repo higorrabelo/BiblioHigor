@@ -24,7 +24,7 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
-        cadastroUsuario.setVisible(false);
+        CadastroUsuario.setVisible(false);
        
     }
     
@@ -49,76 +49,77 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         cadastroUsuario = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        btProcura = new javax.swing.JButton();
-        txtNome = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
-        txtNascimento = new javax.swing.JTextField();
-        txtCadastro = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        txtEndereco = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtSenha = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
-        btCadastro = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        btAtualiza = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        btApaga = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        userTable = new javax.swing.JTable();
+        jLabel15 = new javax.swing.JLabel();
+        btProcura2 = new javax.swing.JButton();
+        txtNome2 = new javax.swing.JTextField();
+        txtEmail2 = new javax.swing.JTextField();
+        txtNascimento2 = new javax.swing.JTextField();
+        txtCadastro2 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtEndereco2 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtSenha2 = new javax.swing.JPasswordField();
+        jLabel18 = new javax.swing.JLabel();
+        btCadastro2 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        btAtualiza2 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        btApaga2 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel6.setText("Endereço");
+        jLabel15.setText("Endereço");
 
-        btProcura.setText("Procurar");
-        btProcura.addActionListener(new java.awt.event.ActionListener() {
+        btProcura2.setText("Procurar");
+        btProcura2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btProcuraActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Nome Usuario");
+        jLabel16.setText("Nome Usuario");
 
-        jLabel2.setText("Senha Usuário");
+        jLabel17.setText("Senha Usuário");
 
-        jLabel3.setText("E-mail");
+        jLabel18.setText("E-mail");
 
-        btCadastro.setText("Cadastrar");
-        btCadastro.addActionListener(new java.awt.event.ActionListener() {
+        btCadastro2.setText("Cadastrar");
+        btCadastro2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCadastroActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Data Nascimento");
+        jLabel19.setText("Data Nascimento");
 
-        btAtualiza.setText("Atualizar");
-        btAtualiza.addActionListener(new java.awt.event.ActionListener() {
+        btAtualiza2.setText("Atualizar");
+        btAtualiza2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAtualizaActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("Data de Cadastro");
+        jLabel20.setText("Data de Cadastro");
 
-        btApaga.setText("Apagar");
-        btApaga.addActionListener(new java.awt.event.ActionListener() {
+        btApaga2.setText("Apagar");
+        btApaga2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btApagaActionPerformed(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setText("Cadastrar Usuário");
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel21.setText("Cadastrar Usuário");
 
         javax.swing.GroupLayout cadastroUsuarioLayout = new javax.swing.GroupLayout(cadastroUsuario);
         cadastroUsuario.setLayout(cadastroUsuarioLayout);
@@ -129,80 +130,70 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(cadastroUsuarioLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
+                            .addComponent(txtEndereco2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCadastro2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNascimento2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel15)
                             .addGroup(cadastroUsuarioLayout.createSequentialGroup()
                                 .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btApaga, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btCadastro2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btApaga2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btProcura)
-                                    .addComponent(btAtualiza)))
-                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)))
+                                    .addComponent(btProcura2)
+                                    .addComponent(btAtualiza2)))
+                            .addComponent(txtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)))
                     .addGroup(cadastroUsuarioLayout.createSequentialGroup()
                         .addGap(115, 115, 115)
-                        .addComponent(jLabel7)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                        .addComponent(jLabel21)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         cadastroUsuarioLayout.setVerticalGroup(
             cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastroUsuarioLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(jLabel16)
                 .addGap(3, 3, 3)
-                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(jLabel17)
                 .addGap(4, 4, 4)
-                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(jLabel18)
                 .addGap(4, 4, 4)
-                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(jLabel19)
                 .addGap(3, 3, 3)
-                .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNascimento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addComponent(jLabel20)
                 .addGap(5, 5, 5)
-                .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCadastro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEndereco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCadastro)
-                    .addComponent(btAtualiza))
+                    .addComponent(btCadastro2)
+                    .addComponent(btAtualiza2))
                 .addGap(18, 18, 18)
                 .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btApaga)
-                    .addComponent(btProcura))
+                    .addComponent(btApaga2)
+                    .addComponent(btProcura2))
                 .addGap(27, 27, 27))
         );
-
-        userTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(userTable);
 
         jMenu1.setText("File");
 
@@ -213,6 +204,17 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem1);
+
+        jMenuItem3.setText("Cadastrar Quadrinho");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Cadastrar Livro");
+        jMenu1.add(jMenuItem4);
         jMenu1.add(jSeparator1);
 
         jMenuItem2.setText("Sair");
@@ -225,8 +227,11 @@ public class GUI extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Editar");
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Informações");
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -235,58 +240,95 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(355, 355, 355)
                 .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
+                .addContainerGap(478, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))))
+            .addComponent(cadastroUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastroActionPerformed
-            
-            try{
-                UsuarioDAO userDao = DaoFactory.criarUsuario();
-                String name = txtNome.getText();
-                String senha = txtSenha.getPassword().toString();
-                String email = txtEmail.getText();
-                Date nascimento = sdf.parse(txtNascimento.getText());
-                Date cadastro = sdf.parse(txtCadastro.getText());
-                String endereco =   txtEndereco.getText();
-                
-                Usuario user = new Usuario(name,senha,email,nascimento,cadastro,endereco);
-                userDao.insere(user);
-                
-                limparCampos();
-                
-            }
-            catch(ParseException e){
-                JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
-            }
-            
-    }//GEN-LAST:event_btCadastroActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
     System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-           cadastroUsuario.setVisible(true);        // TODO add your handling code here:
+                       // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        CadastroUsuario.setVisible(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void btApagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagaActionPerformed
+        try{
+            UsuarioDAO userDao = DaoFactory.criarUsuario();
+            String name = txtNome.getText();
+            String senha = txtSenha.getPassword().toString();
+            String email = txtEmail.getText();
+            Date nascimento = sdf.parse(txtNascimento.getText());
+            Date cadastro = sdf.parse(txtCadastro.getText());
+            String endereco =   txtEndereco.getText();
+
+            Usuario user = new Usuario(name,senha,email,nascimento,cadastro,endereco);
+
+            userDao.delete(novoId);
+
+            limparCampos();
+
+        }
+        catch(ParseException e){
+            JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_btApagaActionPerformed
+
+    private void btAtualizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizaActionPerformed
+        try{
+            UsuarioDAO userDao = DaoFactory.criarUsuario();
+            String name = txtNome.getText();
+            String senha = txtSenha.getPassword().toString();
+            String email = txtEmail.getText();
+            Date nascimento = sdf.parse(txtNascimento.getText());
+            Date cadastro = sdf.parse(txtCadastro.getText());
+            String endereco =   txtEndereco.getText();
+
+            Usuario user = new Usuario(name,senha,email,nascimento,cadastro,endereco);
+            user.setId_usuario(novoId);
+            userDao.update(user);
+
+            limparCampos();
+
+        }
+        catch(ParseException e){
+            JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
+        }
+    }//GEN-LAST:event_btAtualizaActionPerformed
+
+    private void btCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastroActionPerformed
+
+        try{
+            UsuarioDAO userDao = DaoFactory.criarUsuario();
+            String name = txtNome.getText();
+            String senha = txtSenha.getPassword().toString();
+            String email = txtEmail.getText();
+            Date nascimento = sdf.parse(txtNascimento.getText());
+            Date cadastro = sdf.parse(txtCadastro.getText());
+            String endereco =   txtEndereco.getText();
+
+            Usuario user = new Usuario(name,senha,email,nascimento,cadastro,endereco);
+            userDao.insere(user);
+
+            limparCampos();
+
+        }
+        catch(ParseException e){
+            JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
+        }
+    }//GEN-LAST:event_btCadastroActionPerformed
 
     private void btProcuraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProcuraActionPerformed
         String ids = JOptionPane.showInputDialog("Digite o Id do usuário");
@@ -295,58 +337,14 @@ public class GUI extends javax.swing.JFrame {
         UsuarioDAO userDao = DaoFactory.criarUsuario();
         Usuario user = userDao.acharPorId(id);
         limparCampos();
-        
+
         txtNome.setText(user.getNome_usuario());
         txtSenha.setText("");
         txtEmail.setText(user.getEmail_usuario());
         txtNascimento.setText(sdf.format(user.getNascimento()));
         txtCadastro.setText(sdf.format(user.getCadastro()));
-        txtEndereco.setText(user.getEndereco()); 
+        txtEndereco.setText(user.getEndereco());
     }//GEN-LAST:event_btProcuraActionPerformed
-
-    private void btAtualizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizaActionPerformed
-        try{
-                UsuarioDAO userDao = DaoFactory.criarUsuario();
-                String name = txtNome.getText();
-                String senha = txtSenha.getPassword().toString();
-                String email = txtEmail.getText();
-                Date nascimento = sdf.parse(txtNascimento.getText());
-                Date cadastro = sdf.parse(txtCadastro.getText());
-                String endereco =   txtEndereco.getText();
-                
-                Usuario user = new Usuario(name,senha,email,nascimento,cadastro,endereco);
-                user.setId_usuario(novoId);
-                userDao.update(user);
-                
-                limparCampos();
-                
-            }
-            catch(ParseException e){
-                JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
-            }
-    }//GEN-LAST:event_btAtualizaActionPerformed
-
-    private void btApagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagaActionPerformed
-        try{
-                UsuarioDAO userDao = DaoFactory.criarUsuario();
-                String name = txtNome.getText();
-                String senha = txtSenha.getPassword().toString();
-                String email = txtEmail.getText();
-                Date nascimento = sdf.parse(txtNascimento.getText());
-                Date cadastro = sdf.parse(txtCadastro.getText());
-                String endereco =   txtEndereco.getText();
-                
-                Usuario user = new Usuario(name,senha,email,nascimento,cadastro,endereco);
-                
-                userDao.delete(novoId);
-                
-                limparCampos();
-                
-            }
-            catch(ParseException e){
-                JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
-            } // TODO add your handling code here:
-    }//GEN-LAST:event_btApagaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,31 +382,68 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel CadastroUsuario;
+    private javax.swing.JPanel CadastroUsuario1;
     private javax.swing.JButton btApaga;
+    private javax.swing.JButton btApaga1;
+    private javax.swing.JButton btApaga2;
     private javax.swing.JButton btAtualiza;
+    private javax.swing.JButton btAtualiza1;
+    private javax.swing.JButton btAtualiza2;
     private javax.swing.JButton btCadastro;
+    private javax.swing.JButton btCadastro1;
+    private javax.swing.JButton btCadastro2;
     private javax.swing.JButton btProcura;
+    private javax.swing.JButton btProcura1;
+    private javax.swing.JButton btProcura2;
     private javax.swing.JPanel cadastroUsuario;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTextField txtCadastro;
+    private javax.swing.JTextField txtCadastro1;
+    private javax.swing.JTextField txtCadastro2;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmail1;
+    private javax.swing.JTextField txtEmail2;
     private javax.swing.JTextField txtEndereco;
+    private javax.swing.JTextField txtEndereco1;
+    private javax.swing.JTextField txtEndereco2;
     private javax.swing.JTextField txtNascimento;
+    private javax.swing.JTextField txtNascimento1;
+    private javax.swing.JTextField txtNascimento2;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNome1;
+    private javax.swing.JTextField txtNome2;
     private javax.swing.JPasswordField txtSenha;
-    private javax.swing.JTable userTable;
+    private javax.swing.JPasswordField txtSenha1;
+    private javax.swing.JPasswordField txtSenha2;
     // End of variables declaration//GEN-END:variables
 }
