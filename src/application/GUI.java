@@ -6,11 +6,13 @@
 package application;
 
 import dao.DaoFactory;
+import dao.QuadrinhosDAO;
 import dao.UsuarioDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import model.Quadrinhos;
 import model.Usuario;
 
 /**
@@ -25,6 +27,7 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         cadastroUsuario.setVisible(false);
+        cadastroHq.setVisible(false);
        
     }
     
@@ -35,6 +38,13 @@ public class GUI extends javax.swing.JFrame {
         txtNascimento.setText("");
         txtCadastro.setText("");
         txtEndereco.setText("");
+        txtQuadrinho.setText("");
+        txtEditora.setText("");
+        txtAno.setText("");
+        txtNumero.setText("");
+        comboBox.setSelectedIndex(0);
+        
+        
     }
     int novoId;
     
@@ -66,6 +76,22 @@ public class GUI extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         btApaga = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
+        cadastroHq = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtQuadrinho = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtEditora = new javax.swing.JTextField();
+        comboBox = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtAno = new javax.swing.JTextField();
+        txtNumero = new javax.swing.JTextField();
+        btHqCad = new javax.swing.JButton();
+        btHqUpdate = new javax.swing.JButton();
+        btHqDelete = new javax.swing.JButton();
+        btHqProcurar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -77,8 +103,13 @@ public class GUI extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 204));
+
+        cadastroUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        cadastroUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setText("Endereço");
+        cadastroUsuario.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 294, -1, -1));
 
         btProcura.setText("Procurar");
         btProcura.addActionListener(new java.awt.event.ActionListener() {
@@ -86,12 +117,22 @@ public class GUI extends javax.swing.JFrame {
                 btProcuraActionPerformed(evt);
             }
         });
+        cadastroUsuario.add(btProcura, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 420, -1, -1));
+        cadastroUsuario.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 92, 188, -1));
+        cadastroUsuario.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 180, 188, -1));
+        cadastroUsuario.add(txtNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 223, 188, -1));
+        cadastroUsuario.add(txtCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 268, 188, -1));
 
         jLabel16.setText("Nome Usuario");
+        cadastroUsuario.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 75, -1, -1));
+        cadastroUsuario.add(txtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 314, 188, -1));
 
         jLabel17.setText("Senha Usuário");
+        cadastroUsuario.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 118, -1, -1));
+        cadastroUsuario.add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 136, 188, -1));
 
         jLabel18.setText("E-mail");
+        cadastroUsuario.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 162, -1, -1));
 
         btCadastro.setText("Cadastrar");
         btCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -99,8 +140,10 @@ public class GUI extends javax.swing.JFrame {
                 btCadastroActionPerformed(evt);
             }
         });
+        cadastroUsuario.add(btCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 379, -1, -1));
 
         jLabel19.setText("Data Nascimento");
+        cadastroUsuario.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 206, -1, -1));
 
         btAtualiza.setText("Atualizar");
         btAtualiza.addActionListener(new java.awt.event.ActionListener() {
@@ -108,8 +151,10 @@ public class GUI extends javax.swing.JFrame {
                 btAtualizaActionPerformed(evt);
             }
         });
+        cadastroUsuario.add(btAtualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 379, -1, -1));
 
         jLabel20.setText("Data de Cadastro");
+        cadastroUsuario.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 249, -1, -1));
 
         btApaga.setText("Apagar");
         btApaga.addActionListener(new java.awt.event.ActionListener() {
@@ -117,83 +162,73 @@ public class GUI extends javax.swing.JFrame {
                 btApagaActionPerformed(evt);
             }
         });
+        cadastroUsuario.add(btApaga, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 420, 81, -1));
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel21.setText("Cadastrar Usuário");
+        cadastroUsuario.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 11, -1, -1));
 
-        javax.swing.GroupLayout cadastroUsuarioLayout = new javax.swing.GroupLayout(cadastroUsuario);
-        cadastroUsuario.setLayout(cadastroUsuarioLayout);
-        cadastroUsuarioLayout.setHorizontalGroup(
-            cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastroUsuarioLayout.createSequentialGroup()
-                .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastroUsuarioLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel15)
-                            .addGroup(cadastroUsuarioLayout.createSequentialGroup()
-                                .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btApaga, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btProcura)
-                                    .addComponent(btAtualiza)))
-                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel17)))
-                    .addGroup(cadastroUsuarioLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel21)))
-                .addContainerGap(63, Short.MAX_VALUE))
-        );
-        cadastroUsuarioLayout.setVerticalGroup(
-            cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastroUsuarioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel21)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel16)
-                .addGap(3, 3, 3)
-                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
-                .addGap(4, 4, 4)
-                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
-                .addGap(4, 4, 4)
-                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
-                .addGap(3, 3, 3)
-                .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20)
-                .addGap(5, 5, 5)
-                .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCadastro)
-                    .addComponent(btAtualiza))
-                .addGap(18, 18, 18)
-                .addGroup(cadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btApaga)
-                    .addComponent(btProcura))
-                .addGap(27, 27, 27))
-        );
+        cadastroHq.setBackground(new java.awt.Color(204, 204, 204));
+        cadastroHq.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Cadastrar Quadrinhos");
+        cadastroHq.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
+
+        jLabel2.setText("Nome do Quadrinho");
+        cadastroHq.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        txtQuadrinho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtQuadrinhoActionPerformed(evt);
+            }
+        });
+        cadastroHq.add(txtQuadrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 250, -1));
+
+        jLabel3.setText("Editora");
+        cadastroHq.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        jLabel4.setText("Numero");
+        cadastroHq.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        cadastroHq.add(txtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 250, -1));
+
+        comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL", "MAIO", "JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO" }));
+        comboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxActionPerformed(evt);
+            }
+        });
+        cadastroHq.add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 90, 20));
+
+        jLabel5.setText("Mês");
+        cadastroHq.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 10));
+
+        jLabel6.setText("Ano");
+        cadastroHq.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        cadastroHq.add(txtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 50, -1));
+        cadastroHq.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 50, -1));
+
+        btHqCad.setText("Cadastrar");
+        btHqCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHqCadActionPerformed(evt);
+            }
+        });
+        cadastroHq.add(btHqCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+
+        btHqUpdate.setText("Atualizar");
+        cadastroHq.add(btHqUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 80, -1));
+
+        btHqDelete.setText("Apagar");
+        btHqDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHqDeleteActionPerformed(evt);
+            }
+        });
+        cadastroHq.add(btHqDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, -1));
+
+        btHqProcurar.setText("Procurar");
+        cadastroHq.add(btHqProcurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 80, -1));
 
         jMenu1.setText("File");
 
@@ -240,16 +275,17 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
+                .addComponent(cadastroHq, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cadastroHq, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 66, Short.MAX_VALUE))
         );
 
         pack();
@@ -260,11 +296,13 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        cadastroUsuario.setVisible(true);                       // TODO add your handling code here:
+        cadastroUsuario.setVisible(true);   
+        cadastroHq.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        cadastroUsuario.setVisible(false);        // TODO add your handling code here:
+        cadastroUsuario.setVisible(false); 
+        cadastroHq.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void btApagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagaActionPerformed
@@ -349,6 +387,34 @@ public class GUI extends javax.swing.JFrame {
         txtEndereco.setText(user.getEndereco());
     }//GEN-LAST:event_btProcuraActionPerformed
 
+    private void txtQuadrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuadrinhoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuadrinhoActionPerformed
+
+    private void comboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxActionPerformed
+              // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxActionPerformed
+
+    private void btHqCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqCadActionPerformed
+        
+        QuadrinhosDAO hqDao = DaoFactory.criarQuadrinho();
+        String nome = txtQuadrinho.getText().toUpperCase();
+        String editora = txtEditora.getText().toUpperCase();
+        int numero = Integer.parseInt(txtNumero.getText());
+        String mes = comboBox.getSelectedItem().toString();
+        int ano = Integer.parseInt(txtAno.getText());
+        
+        Quadrinhos hq = new Quadrinhos(nome,editora,numero,mes,ano);
+        
+        hqDao.insere(hq);
+        
+            // TODO add your handling code here:
+    }//GEN-LAST:event_btHqCadActionPerformed
+
+    private void btHqDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqDeleteActionPerformed
+limparCampos();        // TODO add your handling code here:
+    }//GEN-LAST:event_btHqDeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -388,15 +454,27 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton btApaga;
     private javax.swing.JButton btAtualiza;
     private javax.swing.JButton btCadastro;
+    private javax.swing.JButton btHqCad;
+    private javax.swing.JButton btHqDelete;
+    private javax.swing.JButton btHqProcurar;
+    private javax.swing.JButton btHqUpdate;
     private javax.swing.JButton btProcura;
+    private javax.swing.JPanel cadastroHq;
     private javax.swing.JPanel cadastroUsuario;
+    private javax.swing.JComboBox<String> comboBox;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -406,11 +484,15 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtCadastro;
+    private javax.swing.JTextField txtEditora;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNascimento;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtQuadrinho;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }
