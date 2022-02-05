@@ -9,9 +9,9 @@ public class Quadrinhos implements Serializable{
     private String nome_editora;
     private int numero;
     private String mes;
-    private String ano;
+    private int ano;
 
-    public Quadrinhos(String nome_quadrinho, String nome_editora, int numero, String mes, String ano) {
+    public Quadrinhos(String nome_quadrinho, String nome_editora, int numero, String mes, int ano) {
         this.nome_quadrinho = nome_quadrinho;
         this.nome_editora = nome_editora;
         this.numero = numero;
@@ -19,7 +19,7 @@ public class Quadrinhos implements Serializable{
         this.ano = ano;
     }
 
-    public Quadrinhos(int id_quadrinho, String nome_quadrinho, String nome_editora, int numero, String mes, String ano) {
+    public Quadrinhos(int id_quadrinho, String nome_quadrinho, String nome_editora, int numero, String mes, int ano) {
         this.id_quadrinho = id_quadrinho;
         this.nome_quadrinho = nome_quadrinho;
         this.nome_editora = nome_editora;
@@ -68,11 +68,11 @@ public class Quadrinhos implements Serializable{
         this.mes = mes;
     }
 
-    public String getAno() {
+    public int getAno() {
         return ano;
     }
 
-    public void setAno(String ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
 

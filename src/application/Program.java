@@ -7,10 +7,12 @@ package application;
 
 import dao.UsuarioDAO;
 import dao.DaoFactory;
+import dao.QuadrinhosDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import model.Usuario;
 import java.util.Date;
+import model.Quadrinhos;
 
 /**
  *
@@ -20,29 +22,29 @@ public class Program {
     
     public static void main(String[] args) throws ParseException{
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        UsuarioDAO userDao = DaoFactory.criarUsuario();
-        
-        Usuario user = userDao.acharPorId(6);
-        
-        user.setNome_usuario("Mamae :) ");
-        
-        userDao.update(user);
-        
-        //Usuario user = new Usuario("Edmilson","Edmilson","edmilson@gmail.com",sdf.parse("24/09/1954"),new Date(),"Avenida Duque de Caxias");
-        //userDao.insere(user);
-        
-        //userDao.delete(3);
-       /*
-        
-         for(Usuario user : userDao.listarUsuario()){
-            System.out.println(user);
+       
+        QuadrinhosDAO hqDao = DaoFactory.criarQuadrinho();
+       
+        for(Quadrinhos hq : hqDao.listarQuadrinhos()){
+            System.out.println(hq);
         }
         
-        System.out.println(userDao.acharPorId(2));
+        /*
+         String nome="Homem Aranha".toUpperCase();
+        String editora="Panini".toUpperCase();
+        int numero = 22;
+        String mes = "JANEIRO".toUpperCase();
+        int ano = 2016;
+        Quadrinhos hq = hqDao.acharPorId(5);
         
-        */ 
-       
+        hq.setNome_quadrinho(nome);
+        hq.setNome_editora(editora);
+        hq.setNumero(numero);
+        hq.setMes(mes);
+        hq.setAno(ano);
         
+        hqDao.update(hq);
+        */
         
     }
     
