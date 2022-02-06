@@ -10,8 +10,11 @@ import dao.QuadrinhosDAO;
 import dao.UsuarioDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Quadrinhos;
 import model.Usuario;
 
@@ -26,7 +29,7 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
-        
+        preencherTabela();
        
     }
     
@@ -46,6 +49,26 @@ public class GUI extends javax.swing.JFrame {
         
     }
     int novoId;
+    
+    public void preencherTabela(){
+    
+        DefaultTableModel model = (DefaultTableModel) hqTable.getModel();
+        model.setNumRows(0);
+        List<Quadrinhos> hqs = new ArrayList<>();
+        hqs = DaoFactory.criarQuadrinho().listarQuadrinhos();
+        
+        for(Quadrinhos hq : hqs){
+            
+            model.addRow(new Object[]{
+                hq.getId_quadrinho(),
+                hq.getNome_quadrinho(),
+                hq.getNome_editora(),
+                hq.getNumero(),
+                hq.getMes(),
+                hq.getAno()
+            });
+        }
+    }
     
  SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     /**
@@ -92,6 +115,8 @@ public class GUI extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         btApaga = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        hqTable = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -246,6 +271,18 @@ public class GUI extends javax.swing.JFrame {
 
         abasPane.addTab("Cadastrar usuários", cadastroUsuario);
         cadastroUsuario.getAccessibleContext().setAccessibleName("cadUser");
+
+        hqTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código do Quadrinho", "Nome do Quadrinho", "Editora", "Numero", "Mes", "Ano"
+            }
+        ));
+        jScrollPane2.setViewportView(hqTable);
+
+        abasPane.addTab("Lista de Quadrinhos", jScrollPane2);
 
         jMenu1.setText("File");
 
@@ -414,6 +451,7 @@ public class GUI extends javax.swing.JFrame {
         txtNumero.setText(String.valueOf(hq.getNumero()));
         comboBox.setName(hq.getMes());
         txtAno.setText(String.valueOf(hq.getAno()));
+        preencherTabela();
     }//GEN-LAST:event_btHqProcurarActionPerformed
 
     private void btHqDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqDeleteActionPerformed
@@ -428,7 +466,8 @@ public class GUI extends javax.swing.JFrame {
         txtAno.setText(String.valueOf(hq.getAno()));
 
         hqDao.delete(hq.getId_quadrinho());
-        limparCampos();        // TODO add your handling code here:
+        limparCampos();
+        preencherTabela();        // TODO add your handling code here:
     }//GEN-LAST:event_btHqDeleteActionPerformed
 
     private void btHqUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqUpdateActionPerformed
@@ -444,7 +483,7 @@ public class GUI extends javax.swing.JFrame {
         hqDao.update(hq);
 
         limparCampos();
-
+        preencherTabela();
         // TODO add your handling code here:
     }//GEN-LAST:event_btHqUpdateActionPerformed
 
@@ -461,8 +500,7 @@ public class GUI extends javax.swing.JFrame {
 
         hqDao.insere(hq);
         limparCampos();
-                
-
+        preencherTabela();
         // TODO add your handling code here:
     }//GEN-LAST:event_btHqCadActionPerformed
 
@@ -522,6 +560,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel cadastroHq;
     private javax.swing.JPanel cadastroUsuario;
     private javax.swing.JComboBox<String> comboBox;
+    private javax.swing.JTable hqTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -543,6 +582,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtCadastro;

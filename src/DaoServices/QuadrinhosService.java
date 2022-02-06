@@ -148,12 +148,13 @@ public class QuadrinhosService implements QuadrinhosDAO{
             st = conn.prepareStatement(sql);
             rs = st.executeQuery();
             while(rs.next()){
+                int id_quadrinho = rs.getInt("id_quadrinho");
                 String nome = rs.getString("nome_quadrinho");
                 String editora = rs.getString("nome_editora");
                 int numero = rs.getInt("numero");
                 String mes = rs.getString("mes");
                 int ano = rs.getInt("ano");
-                Quadrinhos hq = new Quadrinhos(nome,editora,numero,mes,ano);
+                Quadrinhos hq = new Quadrinhos(id_quadrinho,nome,editora,numero,mes,ano);
                 list.add(hq);
             }
         }
