@@ -30,15 +30,19 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         preencherTabela();
-       
+        
+        txtCadastro.setText(sdf.format(new Date()));
     }
     
     public void limparCampos(){
+        
+        
+        
         txtNome.setText("");
         txtSenha.setText("");
         txtEmail.setText("");
         txtNascimento.setText("");
-        txtCadastro.setText("");
+        
         txtEndereco.setText("");
         txtQuadrinho.setText("");
         txtEditora.setText("");
@@ -242,7 +246,7 @@ public class GUI extends javax.swing.JFrame {
         cadastroUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setText("Endereço");
-        cadastroUsuario.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, -1, -1));
+        cadastroUsuario.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
 
         btProcura.setText("Procurar");
         btProcura.addActionListener(new java.awt.event.ActionListener() {
@@ -254,11 +258,11 @@ public class GUI extends javax.swing.JFrame {
         cadastroUsuario.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 188, -1));
         cadastroUsuario.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 188, -1));
         cadastroUsuario.add(txtNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 188, -1));
-        cadastroUsuario.add(txtCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 188, -1));
+        cadastroUsuario.add(txtCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 188, -1));
 
         jLabel16.setText("Nome Usuario");
         cadastroUsuario.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
-        cadastroUsuario.add(txtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 188, -1));
+        cadastroUsuario.add(txtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 188, -1));
 
         jLabel17.setText("Senha Usuário");
         cadastroUsuario.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
@@ -287,7 +291,7 @@ public class GUI extends javax.swing.JFrame {
         cadastroUsuario.add(btAtualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, -1));
 
         jLabel20.setText("Data de Cadastro");
-        cadastroUsuario.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+        cadastroUsuario.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, -1, -1));
 
         btApaga.setText("Apagar");
         btApaga.addActionListener(new java.awt.event.ActionListener() {
