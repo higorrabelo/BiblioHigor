@@ -1,6 +1,7 @@
 package DaoServices;
 import java.sql.Connection;
 import dao.UsuarioDAO;
+import db.DB;
 import db.DbException;
 import java.util.List;
 import model.Usuario;
@@ -41,6 +42,9 @@ public class UsuarioService implements UsuarioDAO{
         catch(SQLException e){
             throw new DbException("Erro na Inserção dos dados de Usuário em banco");
         }
+        finally{
+            DB.closeStatement(st); 
+        }
     }
 
     @Override
@@ -64,7 +68,7 @@ public class UsuarioService implements UsuarioDAO{
             }else{
                 JOptionPane.showMessageDialog(null,"Falha na Atualização do usuário");
             }
-            
+            DB.closeStatement(st);
         
         }
         catch(SQLException e){
@@ -85,6 +89,7 @@ public class UsuarioService implements UsuarioDAO{
                 }else{
                     JOptionPane.showMessageDialog(null, "Falha ao Remover Usuário: Inexistente");
                 }   
+                DB.closeStatement(st);
             }
             catch(SQLException e){
                 throw new DbException("Erro ao Remover Usuários");
@@ -112,6 +117,8 @@ public class UsuarioService implements UsuarioDAO{
                                        rs.getString("endereco")
                                        );
                 }
+                DB.closeStatement(st);
+                DB.closeResultSet(rs);
                 return user;
             }
             catch(SQLException e){
@@ -140,6 +147,8 @@ public class UsuarioService implements UsuarioDAO{
                                            );
                 list.add(user);
             }
+            DB.closeStatement(st);
+            DB.closeResultSet(rs);
             return list;
         }
         catch(SQLException e){

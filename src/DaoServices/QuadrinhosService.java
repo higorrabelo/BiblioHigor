@@ -41,13 +41,19 @@ public class QuadrinhosService implements QuadrinhosDAO{
                 int id = rs.getInt(1);
                 obj.setId_quadrinho(id);
                 JOptionPane.showMessageDialog(null,"Quadrinho Inserido com Sucesso!!!! ID: "+ id);
+                DB.closeResultSet(rs);
                 }
             }else{
                 JOptionPane.showMessageDialog(null,"Falha na inserção do Quadrinho");
             }
+            
         }
         catch(SQLException e){
             throw new DbException("Erro ao inserir Quadrinho");
+        }
+        finally{
+            DB.closeStatement(st);
+            
         }
         
     }
@@ -77,6 +83,9 @@ public class QuadrinhosService implements QuadrinhosDAO{
         }
         catch(SQLException e){
             throw new DbException("Erro ao inserir Quadrinho");
+        }
+        finally{
+            DB.closeStatement(st);
         }
     }
 

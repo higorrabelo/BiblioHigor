@@ -258,6 +258,8 @@ public class GUI extends javax.swing.JFrame {
         cadastroUsuario.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 188, -1));
         cadastroUsuario.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 188, -1));
         cadastroUsuario.add(txtNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 188, -1));
+
+        txtCadastro.setEditable(false);
         cadastroUsuario.add(txtCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 188, -1));
 
         jLabel16.setText("Nome Usuario");
@@ -315,7 +317,15 @@ public class GUI extends javax.swing.JFrame {
             new String [] {
                 "Código do Quadrinho", "Nome do Quadrinho", "Editora", "Numero", "Mes", "Ano"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(hqTable);
 
         abasPane.addTab("Lista de Quadrinhos", jScrollPane2);
@@ -327,7 +337,15 @@ public class GUI extends javax.swing.JFrame {
             new String [] {
                 "Código de Usuário", "Nome do usuário", "Email", "Data de Cadastro", "Endereço"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane3.setViewportView(userTable);
 
         abasPane.addTab("Lista de usuários", jScrollPane3);
