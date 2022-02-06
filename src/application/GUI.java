@@ -55,10 +55,9 @@ public class GUI extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) hqTable.getModel();
         model.setNumRows(0);
         List<Quadrinhos> hqs = new ArrayList<>();
-        hqs = DaoFactory.criarQuadrinho().listarQuadrinhos();
+        hqs = DaoFactory.criarQuadrinho().listarQuadrinhos(); 
         
         for(Quadrinhos hq : hqs){
-            
             model.addRow(new Object[]{
                 hq.getId_quadrinho(),
                 hq.getNome_quadrinho(),
@@ -68,6 +67,22 @@ public class GUI extends javax.swing.JFrame {
                 hq.getAno()
             });
         }
+        
+        DefaultTableModel model2 = (DefaultTableModel) userTable.getModel();
+        model2.setNumRows(0);
+        List<Usuario> users = DaoFactory.criarUsuario().listarUsuario();
+        for(Usuario user :  users){
+            
+            model2.addRow(new Object[] {
+                user.getId_usuario(),
+                user.getNome_usuario(),
+                user.getEmail_usuario(),
+                user.getCadastro(),
+                user.getEndereco()
+            });
+        
+        }
+        
     }
     
  SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -80,6 +95,8 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         abasPane = new javax.swing.JTabbedPane();
         cadastroHq = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -117,6 +134,8 @@ public class GUI extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         hqTable = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        userTable = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -126,6 +145,19 @@ public class GUI extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -284,6 +316,18 @@ public class GUI extends javax.swing.JFrame {
 
         abasPane.addTab("Lista de Quadrinhos", jScrollPane2);
 
+        userTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código de Usuário", "Nome do usuário", "Email", "Data de Cadastro", "Endereço"
+            }
+        ));
+        jScrollPane3.setViewportView(userTable);
+
+        abasPane.addTab("Lista de usuários", jScrollPane3);
+
         jMenu1.setText("File");
 
         jMenuItem1.setText("Cadastrar Usuário");
@@ -371,7 +415,7 @@ public class GUI extends javax.swing.JFrame {
             userDao.delete(novoId);
 
             limparCampos();
-
+            preencherTabela();
         }
         catch(ParseException e){
             JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
@@ -393,7 +437,7 @@ public class GUI extends javax.swing.JFrame {
             userDao.update(user);
 
             limparCampos();
-
+            preencherTabela();
         }
         catch(ParseException e){
             JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
@@ -415,7 +459,7 @@ public class GUI extends javax.swing.JFrame {
             userDao.insere(user);
 
             limparCampos();
-
+            preencherTabela();
         }
         catch(ParseException e){
             JOptionPane.showMessageDialog(null, "Erro Formato de Data Inválido forma válida DD/MM/YYYY ");
@@ -436,6 +480,7 @@ public class GUI extends javax.swing.JFrame {
         txtNascimento.setText(sdf.format(user.getNascimento()));
         txtCadastro.setText(sdf.format(user.getCadastro()));
         txtEndereco.setText(user.getEndereco());
+        preencherTabela();
     }//GEN-LAST:event_btProcuraActionPerformed
 
     private void btHqProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHqProcurarActionPerformed
@@ -582,8 +627,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtCadastro;
     private javax.swing.JTextField txtEditora;
@@ -594,5 +642,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtQuadrinho;
     private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JTable userTable;
     // End of variables declaration//GEN-END:variables
 }

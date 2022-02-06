@@ -140,7 +140,7 @@ public class QuadrinhosService implements QuadrinhosDAO{
 
     @Override
     public List<Quadrinhos> listarQuadrinhos() { 
-        String sql = "select * from quadrinhos";
+        String sql = "select * from quadrinhos order by nome_quadrinho";
         ResultSet rs = null;
         PreparedStatement st = null;
         List<Quadrinhos> list = new ArrayList<>();
