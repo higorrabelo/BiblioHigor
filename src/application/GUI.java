@@ -460,6 +460,8 @@ public class GUI extends javax.swing.JFrame {
         Quadrinhos hq = new Quadrinhos(nome,editora,numero,mes,ano);
 
         hqDao.insere(hq);
+        limparCampos();
+                
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btHqCadActionPerformed
